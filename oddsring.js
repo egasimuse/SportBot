@@ -40,9 +40,16 @@ const self = {
             let away = await (await awayRec[i].getProperty('innerText')).jsonValue();
             console.log(date + " " + match + ' Home: ' + home + '//' + " Draw: " + draw + '//' + ' Away: ' + away);
             console.log('\n');
-            console.log('****************************');
+            console.log('****************************'); 
+            data.push({
+                date: date,
+                match: match,
+                home: home,
+                draw: draw,
+                away: away,
+            });
         }
-        
+        return data;
     }
 }
 module.exports = self;
